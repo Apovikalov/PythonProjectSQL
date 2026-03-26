@@ -20,7 +20,7 @@ class HHApi:
     def get_vacancies(self, employer_id: str) -> List[Dict]:
         """Получение списка вакансий работодателя по его ID"""
         vacancies = []
-        start_page = 0  # первая страница
+        start_page = 0  # Первая страница
         end_page = 1  # Конечная страница
 
         while start_page < end_page:
