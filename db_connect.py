@@ -1,10 +1,10 @@
 import psycopg2
 
 conn = psycopg2.connect(
-    host = "localhost",
-    database = "test",
-    user = "postgres",
-    password = "12345"
+    host="localhost",
+    database="test",
+    user="postgres",
+    password="12345"
 )
 
 # cursor

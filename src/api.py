@@ -1,7 +1,8 @@
 # from http.client import responses
-from typing import Optional, Dict, List
+from typing import Dict, List, Optional
 
 import requests
+
 
 class HHApi:
 
@@ -33,7 +34,7 @@ class HHApi:
             }
 
             response = requests.get(
-                f'{self.base_url}vacancies',headers=self.headers,
+                f'{self.base_url}vacancies', headers=self.headers,
                 params=params)
             response.raise_for_status()
             if response.text.strip():

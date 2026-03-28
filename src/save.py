@@ -1,6 +1,7 @@
+from typing import Dict, List
+
 import psycopg2
 
-from typing import Dict, List
 
 def create_database(params: dict, db_name: str) -> None:
     """Создание базы данных"""
@@ -101,7 +102,7 @@ def save_vacancies_to_db(conn, vacancies: List[Dict], employer_id: str) -> None:
 
                 cur.execute(
                     """
-                    INSERT INTO vacancies (vacancy_id, employer_id, title, description, 
+                    INSERT INTO vacancies (vacancy_id, employer_id, title, description,
                     salary_from, salary_to, currency, url)
                     VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
                     ON CONFLICT (vacancy_id) DO NOTHING

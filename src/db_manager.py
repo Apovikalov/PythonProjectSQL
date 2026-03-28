@@ -1,7 +1,9 @@
+from typing import List, Optional
+
 import psycopg2
 
-from config import config
-from typing import List, Optional
+# from config import config
+
 
 class DBManager:
     """Класс для работы с данными в БД, который подключается к БД PostgreSQL"""
