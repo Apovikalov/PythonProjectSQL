@@ -94,7 +94,7 @@ def save_vacancies_to_db(conn, vacancies: List[Dict], employer_id: str) -> None:
     try:
         with conn.cursor() as cur:
             for vacancy in vacancies:
-                employer_name = vacancy.get('employer', {}).get('name')
+                # employer_name = vacancy.get('employer', {}).get('name')
                 salary = vacancy.get('salary')
                 salary_from = salary.get('from') if salary else None
                 salary_to = salary.get('to') if salary else None
@@ -120,7 +120,7 @@ def save_vacancies_to_db(conn, vacancies: List[Dict], employer_id: str) -> None:
                 )
         conn.commit()
         print(
-            f"Сохранено {len(vacancies)} вакансий для работодателя '{employer_name}' в БД 'vacancies'"
+            f"Сохранено {len(vacancies)} вакансий для работодателя {employer_id} в БД 'vacancies'"
         )
 
     except psycopg2.Error as e:
