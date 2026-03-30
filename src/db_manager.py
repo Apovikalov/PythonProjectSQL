@@ -41,7 +41,7 @@ class DBManager:
                     vacancies.salary_from,
                     vacancies.salary_to,
                     vacancies.currency,
-                    vacancies_url AS vacancy_url
+                    vacancies.url AS vacancy_url
                 FROM vacancies
                 INNER JOIN employers ON vacancies.employer_id = employers.employer_id
                 ORDER BY company_name, vacancy_title
